@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "ts-node src/index.ts"
+    "dev": "ts-node src/index.ts",
+    "protoc": "./scripts/protoc.sh postman proto"
   },
   "repository": {
     "type": "git",
@@ -21,9 +22,11 @@
     "@types/node": "20.7.0",
     "dotenv": "16.3.1",
     "ts-node": "10.9.1",
+    "ts-protoc-gen": "0.15.0",
     "typescript": "5.2.2"
   },
   "dependencies": {
+    "protobufjs": "7.2.5",
     "tiktok-live-connector": "^1.0.5"
   }
 }
