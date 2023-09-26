@@ -10,6 +10,11 @@ OUTPUT_DIR="$2"
 
 mkdir -p "$OUTPUT_DIR"
 
-find "$OUTPUT_DIR" -type f -name "*.proto" -print0 | while IFS= read -r -d $'\0' proto_file; do
-  protoc --plugin=protoc-gen-ts=node_modules/.bin/protoc-gen-ts --ts_out="$OUTPUT_DIR" --proto_path="$PROTO_DIR" "$proto_file"
-done
+grpc_tools_node_protoc \
+    -I="$PROTO_DIR" \
+    --plugin=protoc-gen-ts=$(npm bin)/protoc-gen-ts \
+    --plugin=protoc-gen-grpc=$(npm bin)/grpc_tools_node_protoc_plugin \
+    --js_out=import_style=commonjs:$OUTPUT_DIR \
+    --grpc_out=grpc_js:$OUTPUT_DIR \
+    --ts_out=service=grpc-node,mode=grpc-js:$OUTPUT_DIR \
+    "$PROTO_DIR"/**/*.proto
