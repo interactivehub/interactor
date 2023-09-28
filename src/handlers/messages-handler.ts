@@ -12,7 +12,7 @@ export class MessagesHandler {
   public handle = (message: TikTokLiveMessage) => {
     const { msgId, comment, userId, uniqueId, nickname } = message
 
-    this.logger.info(`Handling message ${msgId}`)
+    this.logger.info(`Handling message with id ${msgId}`, message)
 
     const command = extractCommandFromMessage(comment)
 
@@ -24,8 +24,10 @@ export class MessagesHandler {
         newUserRequest.setNickname(nickname)
 
         this.usersServiceClient.newUser(newUserRequest, (err, res) => {
-          if (err) this.logger.error(`Error creating new user ${userId}`, err)
-          if (res) this.logger.info(`Successfully created user ${userId}`)
+          if (err)
+            this.logger.error(`Error creating user with id ${userId}`, err)
+          if (res)
+            this.logger.info(`Successfully created user with id ${userId}`)
         })
       }
     }

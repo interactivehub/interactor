@@ -1,4 +1,3 @@
-import { WebcastPushConnection } from "tiktok-live-connector"
 import Logger from "../logger"
 import { Connection, TikTokLiveMessage } from "../types"
 import { MessagesHandler } from "../handlers/messages-handler"
