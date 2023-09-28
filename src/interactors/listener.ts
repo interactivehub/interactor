@@ -1,10 +1,9 @@
-import { WebcastPushConnection } from "tiktok-live-connector"
 import Logger from "../logger"
 import { Connection, TikTokLiveMessage } from "../types"
 import { MessagesHandler } from "../handlers/messages-handler"
 
 export class Listener {
-  private readonly logger = Logger.child({ label: Listener.name })
+  private readonly logger = Logger.child({ class: Listener.name })
 
   constructor(
     private readonly conn: Connection,

@@ -3,12 +3,12 @@ import TikTokLiveClient from "./clients/tiktok-live-client"
 import Logger from "./logger"
 import { Listener } from "./interactors/listener"
 import { MessagesHandler } from "./handlers/messages-handler"
-import { usersServiceClient } from "./users/client"
+import { usersServiceClient } from "./clients/grpc-client"
 
 const uniqueId = process.env.TIKTOK_USERNAME || ""
 
 const main = async () => {
-  const logger = Logger.child({ label: "main" })
+  const logger = Logger.child({ class: "main" })
 
   try {
     const connection = await TikTokLiveClient.getConnection(uniqueId)

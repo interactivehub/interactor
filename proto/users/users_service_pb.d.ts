@@ -32,14 +32,8 @@ export namespace NewUserRequest {
 }
 
 export class NewUserResponse extends jspb.Message {
-  getSuccess(): boolean;
-  setSuccess(value: boolean): void;
-
-  getError(): string;
-  setError(value: string): void;
-
-  getData(): string;
-  setData(value: string): void;
+  getUserId(): string;
+  setUserId(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): NewUserResponse.AsObject;
@@ -53,9 +47,7 @@ export class NewUserResponse extends jspb.Message {
 
 export namespace NewUserResponse {
   export type AsObject = {
-    success: boolean,
-    error: string,
-    data: string,
+    userId: string,
   }
 }
 

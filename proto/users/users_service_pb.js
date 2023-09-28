@@ -287,9 +287,7 @@ proto.users_service.NewUserResponse.prototype.toObject = function(opt_includeIns
  */
 proto.users_service.NewUserResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    success: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
-    error: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    data: jspb.Message.getFieldWithDefault(msg, 3, "")
+    userId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -327,16 +325,8 @@ proto.users_service.NewUserResponse.deserializeBinaryFromReader = function(msg, 
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setSuccess(value);
-      break;
-    case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setError(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setData(value);
+      msg.setUserId(value);
       break;
     default:
       reader.skipField();
@@ -367,54 +357,22 @@ proto.users_service.NewUserResponse.prototype.serializeBinary = function() {
  */
 proto.users_service.NewUserResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getSuccess();
-  if (f) {
-    writer.writeBool(
+  f = message.getUserId();
+  if (f.length > 0) {
+    writer.writeString(
       1,
       f
     );
   }
-  f = message.getError();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-  f = message.getData();
-  if (f.length > 0) {
-    writer.writeString(
-      3,
-      f
-    );
-  }
 };
 
 
 /**
- * optional bool success = 1;
- * @return {boolean}
- */
-proto.users_service.NewUserResponse.prototype.getSuccess = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.users_service.NewUserResponse} returns this
- */
-proto.users_service.NewUserResponse.prototype.setSuccess = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 1, value);
-};
-
-
-/**
- * optional string error = 2;
+ * optional string user_id = 1;
  * @return {string}
  */
-proto.users_service.NewUserResponse.prototype.getError = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+proto.users_service.NewUserResponse.prototype.getUserId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -422,26 +380,8 @@ proto.users_service.NewUserResponse.prototype.getError = function() {
  * @param {string} value
  * @return {!proto.users_service.NewUserResponse} returns this
  */
-proto.users_service.NewUserResponse.prototype.setError = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * optional string data = 3;
- * @return {string}
- */
-proto.users_service.NewUserResponse.prototype.getData = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.users_service.NewUserResponse} returns this
- */
-proto.users_service.NewUserResponse.prototype.setData = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
+proto.users_service.NewUserResponse.prototype.setUserId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
