@@ -23,11 +23,12 @@ export class MessagesHandler {
         newUserRequest.setUniqueId(uniqueId)
         newUserRequest.setNickname(nickname)
 
-        this.usersServiceClient.newUser(newUserRequest, (err, res) => {
-          if (err)
+        this.usersServiceClient.newUser(newUserRequest, (err) => {
+          if (err) {
             this.logger.error(`Error creating user with id ${userId}`, err)
-          if (res)
+          } else {
             this.logger.info(`Successfully created user with id ${userId}`)
+          }
         })
       }
     }
