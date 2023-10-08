@@ -17,4 +17,4 @@ grpc_tools_node_protoc \
     --js_out=import_style=commonjs:$OUTPUT_DIR \
     --grpc_out=grpc_js:$OUTPUT_DIR \
     --ts_out=service=grpc-node,mode=grpc-js:$OUTPUT_DIR \
-    "$PROTO_DIR"/**/*.proto
+    "$PROTO_DIR"/**/**/*.proto
