@@ -1,1 +1,5 @@
-export const AVAILABLE_COMMANDS = ["!new", "!balance"] as const
+export const AVAILABLE_COMMANDS = [
+  "!new", // User
+  "!balance", // User
+  "!bet", // Wheel
+] as const

@@ -11,8 +11,8 @@ export class JoinWheelRoundRequest extends jspb.Message {
   getBet(): number;
   setBet(value: number): void;
 
-  getPick(): WheelItemColorMap[keyof WheelItemColorMap];
-  setPick(value: WheelItemColorMap[keyof WheelItemColorMap]): void;
+  getPick(): WheelPickMap[keyof WheelPickMap];
+  setPick(value: WheelPickMap[keyof WheelPickMap]): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): JoinWheelRoundRequest.AsObject;
@@ -28,16 +28,16 @@ export namespace JoinWheelRoundRequest {
   export type AsObject = {
     userId: string,
     bet: number,
-    pick: WheelItemColorMap[keyof WheelItemColorMap],
+    pick: WheelPickMap[keyof WheelPickMap],
   }
 }
 
-export interface WheelItemColorMap {
+export interface WheelPickMap {
   GREY: 0;
   BLUE: 1;
   YELLOW: 2;
   RED: 3;
 }
 
-export const WheelItemColor: WheelItemColorMap;
+export const WheelPick: WheelPickMap;
 
