@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "ts-node src/index.ts",
-    "protoc": "./scripts/protoc.sh postman proto"
+    "protoc": "./scripts/protoc.sh postman proto",
+    "check-deps": "npx npm-check-updates -i"
   },
   "repository": {
     "type": "git",
