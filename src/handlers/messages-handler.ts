@@ -1,5 +1,3 @@
-import { UsersServiceClient } from "../../proto/users/users_service_grpc_pb"
-import { NewUserRequest } from "../../proto/users/users_service_pb"
 import Logger from "../logger"
 import { TikTokLiveMessage } from "../types"
 import { extractCommandFromMessage } from "../utils/command-from-message"

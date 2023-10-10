@@ -1,8 +1,8 @@
 import { WheelServiceClient } from "../../proto/games/wheel/wheel_service_grpc_pb"
 import {
   JoinWheelRoundRequest,
-  WheelItemColor,
-  WheelItemColorMap,
+  WheelPick,
+  WheelPickMap,
 } from "../../proto/games/wheel/wheel_service_pb"
 import Logger from "../logger"
 import { TikTokLiveMessage } from "../types"
@@ -31,9 +31,11 @@ export class WheelCommandsHandler {
     const joinWheelRoundRequest = new JoinWheelRoundRequest()
     joinWheelRoundRequest.setUserId(userId)
     joinWheelRoundRequest.setPick(
-      WheelItemColor[pick.toUpperCase() as keyof WheelItemColorMap]
+      WheelPick[pick.toUpperCase() as keyof WheelPickMap]
     )
     joinWheelRoundRequest.setBet(parseFloat(bet))
+
+    console.log(joinWheelRoundRequest.toObject(), pick, bet)
 
     this.wheelServiceClient.joinWheelRound(joinWheelRoundRequest, (err) => {
       if (err) {
