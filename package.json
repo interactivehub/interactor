@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/interactivehub/interactor#readme",
   "devDependencies": {
-    "@types/node": "20.8.4",
+    "@types/node": "20.9.0",
     "dotenv": "16.3.1",
     "grpc-tools": "1.12.4",
     "ts-node": "10.9.1",
