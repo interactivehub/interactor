@@ -23,7 +23,7 @@
     "@types/node": "20.8.4",
     "dotenv": "16.3.1",
     "grpc-tools": "1.12.4",
-    "ts-node": "10.9.1",
+    "ts-node": "10.9.2",
     "ts-protoc-gen": "0.15.0",
     "typescript": "5.2.2"
   },
